@@ -5,6 +5,7 @@ const COMMON_HEADERS = {
   "accept": "*/*"
 }
 
+// @ts-ignore
 const cookieJar: CookieJar = new makeFetchCookie.toughCookie.CookieJar();
 const fetchCookie = makeFetchCookie(fetch, cookieJar);
 
