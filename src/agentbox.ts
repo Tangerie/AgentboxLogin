@@ -6,14 +6,17 @@ const COMMON_HEADERS = {
 }
 
 // @ts-ignore
-const cookieJar: CookieJar = new makeFetchCookie.toughCookie.CookieJar();
-const fetchCookie = makeFetchCookie(fetch, cookieJar);
+let cookieJar: CookieJar = new makeFetchCookie.toughCookie.CookieJar();
+let fetchCookie = makeFetchCookie(fetch, cookieJar);
 
 export interface Config {
   AgentboxBaseUrl : string
 }
 
 export async function agentboxAuthenticate(username : string, password : string, config : Config) {
+  // @ts-ignore
+  cookieJar = new makeFetchCookie.toughCookie.CookieJar();
+  fetchCookie = makeFetchCookie(fetch, cookieJar);
 
   // 01
   let res = await fetchCookie(config.AgentboxBaseUrl + "/admin/login", {

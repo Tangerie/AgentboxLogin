@@ -5,11 +5,12 @@ const COMMON_HEADERS = {
     "accept": "*/*"
 }
 
-// @ts-ignore
-const cookieJar: CookieJar = new makeFetchCookie.toughCookie.CookieJar();
-const fetchCookie = makeFetchCookie(fetch, cookieJar);  
 
 export async function corelogicLogin(username : string, password : string) {
+    // @ts-ignore
+    const cookieJar: CookieJar = new makeFetchCookie.toughCookie.CookieJar();
+    const fetchCookie = makeFetchCookie(fetch, cookieJar);  
+    
     // 01
     let res : Response;
 

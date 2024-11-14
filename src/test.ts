@@ -25,4 +25,3 @@ console.log(await corelogicLogin(
     clUser,
     clPass
 ))
-
